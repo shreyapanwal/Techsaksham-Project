@@ -1,0 +1,1016 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <title>Academies</title>
+</head>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Verdana, sans-serif;
+    }
+
+    .mySlides {
+        display: none;
+    }
+
+    img {
+        vertical-align: middle;
+        height: 500px;
+    }
+
+    /* Slideshow container */
+    .slideshow-container {
+        max-width: 2000px;
+        position: relative;
+        margin: auto;
+    }
+
+    /* Caption text */
+    .text {
+        color: #f2f2f2;
+        font-size: 15px;
+        padding: 8px 12px;
+        position: absolute;
+        bottom: 8px;
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Number text (1/3 etc) */
+    .numbertext {
+        color: #f2f2f2;
+        font-size: 12px;
+        padding: 8px 12px;
+        position: absolute;
+        top: 0;
+    }
+
+    /* The dots/bullets/indicators */
+    .dot {
+        height: 15px;
+        width: 15px;
+        margin: 0 2px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.9s ease;
+    }
+
+    .active {
+        background-color: #717171;
+    }
+
+    /* Fading animation */
+    .fade {
+        -webkit-animation-name: fade;
+        -webkit-animation-duration: 1.8s;
+        animation-name: fade;
+        animation-duration: 1.8s;
+    }
+
+    @-webkit-keyframes fade {
+        from {
+            opacity: .4
+        }
+
+        to {
+            opacity: 1
+        }
+    }
+
+    @keyframes fade {
+        from {
+            opacity: .4
+        }
+
+        to {
+            opacity: 1
+        }
+    }
+
+    /* On smaller screens, decrease text size */
+    @media only screen and (max-width: 300px) {
+        .text {
+            font-size: 11px
+        }
+    }
+
+    #flip {
+        padding: 5px;
+        text-align: center;
+        color: white;
+        background-color: rgb(97, 96, 96);
+        border: solid 1px white;
+        border-radius: 8px;
+    }
+
+    #panel {
+        font-size: 4rem;
+        color: rgb(60, 7, 110);
+        font-family: 'Times New Roman', Times, serif;
+        font-weight: bold;
+        height: 200px;
+        text-align: center;
+        text-shadow: 2px 2px grey;
+    }
+
+
+    #panel {
+        padding: 50px;
+        display: none;
+    }
+
+    * {
+        top: 0;
+        left: 0;
+    }
+
+    .img-thumbnail {
+        height: 200px;
+        width: 100vh;
+        background-size: cover;
+
+    }
+
+    @media(max-width:700px) {
+        .heading h1 {
+            font-size: 3rem;
+        }
+    }
+
+    .row {
+        margin: auto;
+    }
+
+    .row .left button a {
+        text-decoration: none;
+        color: white;
+    }
+
+    #myBtn {
+        background-color: rgb(63, 62, 62);
+        color: white;
+        width: auto;
+        border-radius: 4px;
+        padding: 4px;
+        margin-bottom: 10px;
+
+    }
+
+    #myBtn:hover {
+        background-color: rgb(85, 2, 2);
+        color: white;
+    }
+
+    .row h4 {
+        text-decoration: underline;
+    }
+
+    .nav-item {
+        font-family: poppines;
+        font-size: 18px;
+    }
+
+    .left {
+        font-family: Georgia, serif;
+    }
+
+    body {
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .wrapper {
+        width: 1170px;
+        margin: auto;
+    }
+
+    .text-uppercase {
+        color: blue;
+    }
+
+    .text-uppercase:hover {
+        color: red;
+    }
+
+    .img-fluid {
+
+        height: 70vh;
+    }
+
+    #button {
+        display: inline-block;
+        background-color: rgb(63, 62, 62);
+        width: 50px;
+        height: 50px;
+        text-align: center;
+        border-radius: 8px;
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        transition: background-color .3s,
+            opacity .5s, visibility .5s;
+        opacity: 0;
+        visibility: hidden;
+        z-index: 1000;
+    }
+
+    #button::after {
+        content: "\f077";
+        font-family: FontAwesome;
+        font-weight: normal;
+        font-style: normal;
+        font-size: 2em;
+        line-height: 50px;
+        color: #fff;
+    }
+
+    #button:hover {
+        cursor: pointer;
+        background-color: #333;
+    }
+
+    #button:active {
+        background-color: #555;
+    }
+
+    #button.show {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .head h6 {
+        font-size: 50px;
+        font-size: 4rem;
+        color: rgb(60, 7, 110);
+        font-family: 'Times New Roman', Times, serif;
+        font-weight: bold;
+        text-shadow: 2px 2px grey;
+        margin-left: 350px;
+        margin-top: 10px;
+    }
+
+    .head1 h6 {
+        font-size: 50px;
+        font-size: 4rem;
+        color: rgb(60, 7, 110);
+        font-family: 'Times New Roman', Times, serif;
+        font-weight: bold;
+        text-shadow: 2px 2px grey;
+        margin-left: 200px;
+        margin-top: 10px;
+    }
+
+    .container hr {
+        width: 80%;
+    }
+</style>
+
+<body>
+    <div class="head">
+        <h6>Academies In India</h6>
+    </div>
+
+    <div class="container">
+        <a id="button"></a>
+
+        <div class="container row">
+            <h4 class="text-danger my-4">Usha School of Athletics, Kozhikode, Kerala</h4>
+
+            <div class="col-lg-8 col-md-8 col-sm-12 col-12 left">
+                <p></p>At the Usha School of Athletics, the athletes – all girls – live and train under the guidance of
+                renowned former Indian athlete PT Usha. Their methods, diets, exercise, psychological counselling are
+                all scientifically devised with the help of international experts. </p>
+                <button id="myBtn" class="text-center"><a href="http://www.ptusha.org/" target="_blank">If
+                        You Want To Know More
+                        Click Here</a></button>
+
+
+            </div>
+            <br><br><br>
+            <hr>
+
+        </div>
+
+
+        <a id="button"></a>
+
+        <div class="container row">
+            <h4 class="text-danger my-4">Inspire Institute of Sports, Bellary, Karnataka</h4>
+
+            <div class="col-lg-8 col-md-8 col-sm-12 col-12 left">
+                <p>The Inspire Institute of Sports was founded with the goal of breeding champions in the country
+                    and
+                    with an eye on podium finishes at the Olympics. They combine state-of-the-art facilities with
+                    sports
+                    science and technical excellence in order to foster a spirit of growth and maximize potential to
+                    help athletes chase their Olympic dreams.
+                </p>
+                <button id="myBtn" class="text-center"><a href="https://www.inspireinstituteofsport.com/"
+                        target="_blank">If
+                        You Want To Know More
+                        Click Here</a></button>
+
+
+            </div>
+            <br><br><br>
+            <hr>
+
+        </div>
+
+        <a id="button"></a>
+
+        <div class="container row">
+            <h4 class="text-danger my-4">Ashwini Sports Foundation, Kodagu, Karnataka</h4>
+
+            <div class="col-lg-8 col-md-8 col-sm-12 col-12 left">
+                <p>Former Indian track and field athlete Ashwin Nachappa set up the Ashwini Sports Foundation in
+                    2010. It is a non-profit organization that aims to groom talented athletes from a young age
+                    and tries to promote them in order to achieve international standards of excellence. The ASF
+                    Arena comprises of the SAI-ASF Athletics Centre as well as residential facilities.
+
+
+                </p>
+                <button id="myBtn" class="text-center"><a href="https://asfedge.org/" target="_blank">If
+                        You Want To Know More
+                        Click Here</a></button>
+
+
+            </div>
+            <br><br><br>
+            <hr>
+
+        </div>
+
+        <a id="button"></a>
+
+        <div class="container row">
+            <h4 class="text-danger my-4">Kalinga Institute of Industrial Technology, Bhubaneshwar, Odisha
+
+            </h4>
+
+            <div class="col-lg-8 col-md-8 col-sm-12 col-12 left">
+                <p>The Kalinga Institute of Industrial Technology is a prominent college in Bhubaneshwar
+                    that also offers world-class sporting facilities to its students. The 400-acre KIIT
+                    Stadium has a 400m track and also promotes field activities. Despite not being an
+                    exclusive sports institution, their ultramodern sports facility and training is at par
+                    with any national sports centre. They have groomed several athletes who have
+                    participated in Olympics, Asian Games, and Commonwealth Games. Sprinter and national
+                    Dutee Chand is an alumnus of KIIT.
+
+
+                </p>
+                <button id="myBtn" class="text-center"><a href="https://kiit.ac.in/" target="_blank">If
+                        You Want To Know More
+                        Click Here</a></button>
+
+
+            </div>
+            <br><br><br>
+            <hr>
+
+        </div>
+
+        <a id="button"></a>
+
+        <div class="container row">
+            <h4 class="text-danger my-4"> GHG Khalsa College, Ludhiana, Punjab </h4>
+
+            <div class="col-lg-8 col-md-8 col-sm-12 col-12 left">
+                <p> The GHG Khalsa College in Ludhiana actively tries to promote the culture of sports
+                    and education among its students and is among the finest athletic centres in the
+                    country.
+                </p>
+                <button id="myBtn" class="text-center"><a href="http://www.ghgcollegesadhar.org/" target="_blank">If
+                        You Want To Know More
+                        Click Here</a></button>
+
+
+            </div>
+            <br><br><br>
+            <hr>
+
+        </div>
+
+        <a id="button"></a>
+
+        <div class="container row">
+            <h4 class="text-danger my-4">Anju Bobby George Sports Foundation, Bengaluru, Karnataka
+            </h4>
+
+            <div class="col-lg-8 col-md-8 col-sm-12 col-12 left">
+                <p> Inspired by their own struggles, former Indian athletes Anju and Bobby George
+                    set up the Anju Bobby George Sports Foundation to make sure that promising
+                    athletes receive individual training as well as world-class facilities,
+                    amenities, and infrastructure in the academy. Both Anju and Bobby George came
+                    from rural villages in Kerala and had to struggle in order to secure financial
+                    aid to train abroad. Their foundation is focused on identifying talent from the
+                    grassroots stage, especially in rural India.
+                </p>
+                <button id="myBtn" class="text-center"><a href="https://www.absf.in/" target="_blank">If
+                        You Want To Know More
+                        Click Here</a></button>
+
+
+            </div>
+            <br><br><br>
+            <hr>
+
+        </div>
+
+        <a id="button"></a>
+
+        <div class="container row">
+            <h4 class="text-danger my-4">MAR Athanasius Sports Academy, Ernakulum, Kerala
+
+            </h4>
+
+            <div class="col-lg-8 col-md-8 col-sm-12 col-12 left">
+                <p> The MAR Athanasius Sports Academy in Kerala works under the supervision of
+                    the MAR Athanasius College Association. They offer training to young players
+                    in various kinds of sports and their aim is to create champions in different
+                    sporting events.
+
+                </p>
+                <button id="myBtn" class="text-center"><a href="https://www.macollege.in/sportsandgames"
+                        target="_blank">If
+                        You Want To Know More
+                        Click Here</a></button>
+
+
+            </div>
+            <br><br><br>
+            <hr>
+
+        </div>
+
+        <a id="button"></a>
+
+        <div class="container row">
+            <h4 class="text-danger my-4">MP Academy, Bhopal, Madhya Pradesh </h4>
+
+            <div class="col-lg-8 col-md-8 col-sm-12 col-12 left">
+                <p> The MP Athletics Academy was established in July 2016 in Bhopal. The
+                    Academy is equipped with sports infrastructure corresponding to
+                    international standards and state-of-the-art training facilities and
+                    tries to promote world-class training to its athletes. Internationally
+                    acclaimed coaches offer training at the academy.
+                </p>
+                <button id="myBtn" class="text-center"><a href="http://www.dsywmp.gov.in/academies" target="_blank">If
+                        You Want To Know More
+                        Click Here</a></button>
+
+
+            </div>
+            <br><br><br>
+            <hr>
+
+        </div>
+
+        <a id="button"></a>
+
+        <div class="container row">
+            <h4 class="text-danger my-4">SDAT Academy Tiruvannamalai and Madurai, Tamil
+                Nadu </h4>
+
+            <div class="col-lg-8 col-md-8 col-sm-12 col-12 left">
+                <p> The Sports Development Authority of Tamil Nadu (SDAT) operates under
+                    the Tamil Nadu government. Their goal is to identify talent and
+                    promote them to achieving excellence at the State, National and
+                    International Levels. They're also concerned with establishing a
+                    sporting culture in the state and developing the infrastructure at
+                    various levels.
+                </p>
+                <button id="myBtn" class="text-center"><a href="https://www.sdat.tn.gov.in/" target="_blank">If
+                        You Want To Know More
+                        Click Here</a></button>
+
+
+            </div>
+            <br><br><br>
+            <hr>
+
+        </div>
+
+        <a id="button"></a>
+
+        <div class="container row">
+            <h4 class="text-danger my-4"> Army Sports Institute, Pune, Maharashtra
+            </h4>
+
+            <div class="col-lg-8 col-md-8 col-sm-12 col-12 left">
+                <p> The Army Sports Institute was established on July 1, 2001 in
+                    order to tap into the vast pool of sporting talent serving in
+                    the army. The institute was established under the 'Mission
+                    Olympics Programme' and is a multi-disciplinary institute
+                    imparting training in seven sports: Archery, Athletics, Boxing,
+                    Diving, Wrestling, Fencing, and Weightlifting. The Army Sports
+                    Institute has various facilities to suit the need of those
+                    training in athletics including a 400m international standard
+                    synthetic track as well as a 2km cross country/warm up track.
+                    They also have foreign coaches for various events and trained
+                    masseurs for rehab.
+                </p>
+                <button id="myBtn" class="text-center"><a href="https://www.armysportsinstitute.com/" target="_blank">If
+                        You Want To Know More
+                        Click Here</a></button>
+
+
+            </div>
+            <br><br><br>
+
+
+        </div>
+    </div> <br><br><br>
+
+
+
+
+    <div class="head1">
+        <h6>Scholarships Related To Sports</h6>
+    </div>
+
+    <div class="container">
+
+        <div class="container row">
+            <h4 class="text-danger my-4">Sports Authority of India (SAI) and Netaji Subhas National Institute Of Sports
+                (NSNIS), Patiala</h4>
+
+            <div class="col-lg-8 col-md-8 col-sm-12 col-12 left">
+                <b>Scholarship Rewards: Rs.6600/- per annum
+                </b>
+                <p>Located in Patiala in Punjab, Netaji Subhas National Institute of Sports is one of Asia’s biggest
+                    sports institutions established by the Government of India. It is actually the academic franchise of
+                    Sports Authority of India (SAI) with the goal of developing sports in the country and training
+                    people in different disciplines related to sports. In its superior aim to promote sports and help
+                    students achieve their dreams, the Institution has introduced a new scheme of honouring talented
+                    sports people with a Sports Scholarship. The main scholarships include State and National Level
+                    Scholarships, Scholarships for Students and Special Scholarships for Women.</p>
+                <button id="myBtn" class="text-center"><a
+                        href="https://drive.google.com/file/d/1xbzWu-MjDeXk8CwzcOcDscJxLNeKBGc3/view?usp=sharing"
+                        target="_blank">If
+                        You Want To Know More
+                        Click Here</a></button>
+
+
+            </div>
+            <br><br><br>
+            <hr>
+
+        </div>
+        <div class="container row">
+            <h4 class="text-danger my-4">Reliance Foundation Youth Sports, Navi Mumbai </h4>
+
+            <div class="col-lg-8 col-md-8 col-sm-12 col-12 left">
+                <b>Scholarship Rewards: Up to INR 2,00,000/-
+                </b>
+                <p>Reliance Foundation Youth Sports is a country wide sports platform for school and college
+                    sportspeople which was launched in 2015. Their sole focus is using sports as a medium to encourage
+                    leadership qualities and learning among youth in rural areas. This platform encourages emerging
+                    talents and nurtures them to become India’s next biggest champions. They also offer various sports
+                    scholarships and programmes like the Young Champs program which is a full-time residential program
+                    for emerging talents.
+
+                    RFYS also celebrates August 29th as their official Sports Day to commemorate the birthday of Hockey
+                    legend, Dhyan Chand. </p>
+                <button id="myBtn" class="text-center"><a href="https://www.rfyouthsports.com/" target="_blank">If
+                        You Want To Know More
+                        Click Here</a></button>
+
+
+            </div>
+            <br><br><br>
+            <hr>
+
+        </div>
+        <div class="container row">
+            <h4 class="text-danger my-4">SRM University, Kattankulathur </h4>
+
+            <div class="col-lg-8 col-md-8 col-sm-12 col-12 left">
+                <b>Scholarship Rewards: Up to 50% of tuition fee waiver
+                </b>
+                <p>SRM University, one of India’s top private universities, awards prestigious sports scholarships to
+                    students in order to encourage and support their exemplary talent in sports. In the year 2014,
+                    almost 108 students were awarded a sports scholarship which is the most number of scholarships a
+                    university has granted. The trials for selection are conducted every year which is judged by
+                    esteemed coaches and related people who then award these scholarships to the deserving candidates in
+                    an award ceremony. </p>
+                <button id="myBtn" class="text-center"><a
+                        href="https://www.srmist.edu.in/admission-india/engineering/fees/scholarships"
+                        target="_blank">If
+                        You Want To Know More
+                        Click Here</a></button>
+
+
+            </div>
+            <br><br><br>
+            <hr>
+
+        </div>
+        <div class="container row">
+            <h4 class="text-danger my-4">Delhi University, New Delhi</h4>
+
+            <div class="col-lg-8 col-md-8 col-sm-12 col-12 left">
+                <p>One of the main advantages of Delhi University (commonly known as DU) is that it gives colleges the
+                    freedom to decide the number of seats to be filled under Sports Quota based on the number of seats
+                    available. These sports scholarships are given to the prospects based on selection trials for new
+                    candidates. For the students who have represented India in International Level Sports Events, direct
+                    admissions to sports scholarships are given without having to undergo any sports trials. The list of
+                    shortlisted candidates are later sent to the Delhi University Sports Council (DUSC) for other
+                    processes related to the sports scholarship. </p>
+                <button id="myBtn" class="text-center"><a
+                        href="http://www.du.ac.in/index.php?page=opportunities-scholarships" target="_blank">If
+                        You Want To Know More
+                        Click Here</a></button>
+
+
+            </div>
+            <br><br><br>
+            <hr>
+
+        </div>
+        <div class="container row">
+            <h4 class="text-danger my-4">PACE Scholarships by GoSports Foundation, Bengaluru </h4>
+
+            <div class="col-lg-8 col-md-8 col-sm-12 col-12 left">
+
+                <p>The PACE Sports Scholarships are awarded by the GoSports Foundation to empower India’s next
+                    generation of sports men and women. They are given out every year during the month of January.
+                    Monetary support isn’t the only objective of this sports scholarship, they also fund many lesser
+                    known talents and encourage them to participate in international level events. Kidambi Srikanth,
+                    Dipa Karmakar and Sharath Gayakwad are the various Olympic and Paralympic champions who were funded
+                    and fuelled by this Foundation.
+
+                    The basic eligibility for an athlete to secure this prestigious sports scholarship is to be a
+                    national level champion in their respective sport. The GoSports advisory board also employs various
+                    sporting legends like Rahul Dravid and Abhinav Bindra as advisors and mentors to the emerging
+                    talents of the foundation.</p>
+                <button id="myBtn" class="text-center"><a href="http://pacescholarships.gosportsfoundation.in/"
+                        target="_blank">If
+                        You Want To Know More
+                        Click Here</a></button>
+
+
+            </div>
+            <br><br><br>
+            <hr>
+
+        </div>
+        <div class="container row">
+            <h4 class="text-danger my-4">Indian Oil Sports Scholarship, New Delhi </h4>
+
+            <div class="col-lg-8 col-md-8 col-sm-12 col-12 left">
+                <b>Scholarship Rewards: Scholar: Rs. 12,000-16,000, Elite Scholar: Rs. 15,000-19,000
+                </b>
+                <p>Indian Oil Corporation Limited (IOCL), is India’s largest public sector and flagship oil company with
+                    its headquarters in New Delhi. They have been promoting the importance of sports for three decades
+                    by offering sports scholarships and sponsorships for a period of three years. Their sole aim is to
+                    provide opportunities to talented sportspeople. They provide scholarships based on two categories
+                    which are:
+
+                    Scholars in Sports
+                    Elite Scholars in Sports
+                    IOCL was also the lead sponsor for the first edition of Khelo India University Games (KIUG) which
+                    was held in Bhubaneswar, Odisha. </p>
+                <button id="myBtn" class="text-center"><a
+                        href="https://schools.chekrs.com/indian-oil-sports-scholarship.html" target="_blank">If
+                        You Want To Know More
+                        Click Here</a></button>
+
+
+            </div>
+            <br><br><br>
+            <hr>
+
+        </div>
+        <div class="container row">
+            <h4 class="text-danger my-4">Airports Authority of India, New Delhi </h4>
+
+            <div class="col-lg-8 col-md-8 col-sm-12 col-12 left">
+                <b>Scholarship Rewards: INR 12,000/-per month.
+                </b>
+                <p>Airports Authority of India (AAI) is an organisation that works under the Ministry of Civil Aviation
+                    that is responsible for civil aviation infrastructure all around India. They give out AAI Sports
+                    Scholarship Scheme for the promising players who represent India in different levels. This
+                    scholarship scheme enhances the standards of sports and encourages young sporting talent. They also
+                    give out permanent employment to sports people based on their performances and availability of
+                    vacancies. </p>
+                <button id="myBtn" class="text-center"><a href="https://www.aai.aero/" target="_blank">If
+                        You Want To Know More
+                        Click Here</a></button>
+
+
+            </div>
+            <br><br><br>
+            <hr>
+
+        </div>
+        <div class="container row">
+            <h4 class="text-danger my-4">Amity University, Noida</h4>
+
+            <div class="col-lg-8 col-md-8 col-sm-12 col-12 left">
+                <b>Scholarship Rewards: Upto 30-40% of tuition fee waiver
+                </b>
+                <p>Amity University is one of the leading private research universities in Noida with world class
+                    infrastructure where sports scholarships are offered on an annual basis. The Amity University Sports
+                    Scholarships were introduced to help the financially weak students who are talented in sports. There
+                    are two types of admission processes for getting the scholarship:
+
+                    <br>Fast Track Admission – 100% Scholarship for International Players and 50% Scholarship for
+                    National
+                    Medal winners.<br>
+                    Admission through Sports Trials and Interview<br><br>
+                    The students who come under Fast Track Admission don’t have to appear for Sports Trials and
+                    Interviews but the latter’s selection will be solely based on that.
+                </p>
+                <button id="myBtn" class="text-center"><a href="https://www.amity.edu/admissions-scholarship.aspx"
+                        target="_blank">If
+                        You Want To Know More
+                        Click Here</a></button>
+
+
+            </div>
+            <br><br><br>
+            <hr>
+
+        </div>
+        <div class="container row">
+            <h4 class="text-danger my-4">Tamil Nadu Engineering Admission (TNEA) and Anna University, Chennai </h4>
+
+            <div class="col-lg-8 col-md-8 col-sm-12 col-12 left">
+                <b>Scholarship Rewards: Undisclosed tuition fee waiver
+                </b>
+                <p>Anna University is a prestigious public university which provides affiliation to 593 colleges in
+                    Tamil Nadu. Every year, TNEA and Anna University teams up to offer sports scholarships to deserving
+                    candidates with regards to their sports eminence. As of now, the total number of seats given through
+                    sports quota has been increased to 500.<br><br>
+
+                    To apply for a sports scholarship, students should attach their reservation form, TNEA application
+                    form along with the relevant documents and a demand draft for Rs. 100/- after which they will be
+                    called for a counselling. </p>
+                <button id="myBtn" class="text-center"><a href="https://www.annauniv.edu/scstcell/scholarship.html"
+                        target="_blank">If
+                        You Want To Know More
+                        Click Here</a></button>
+                        
+            </div>
+            <br><br><br>
+            <hr>
+            <div class="container row">
+                <h4 class="text-danger my-4">FG Power Player, Bengaluru </h4>
+
+                <div class="col-lg-8 col-md-8 col-sm-12 col-12 left">
+                    <p>In an innovative twist to sports scholarships, Padma Shri awardee Gautam Gambhir along with the
+                        sports technology firm Funngage.com, launched India’s first digitally powered cricket
+                        scholarship program. Through this PAN India program, aspiring cricketers from the age group of
+                        12-24 years get a fully funded Cricket Development Sports Scholarship and a free admission to a
+                        training camp in Perth, Australia. <br><br> The selected students will also get an opportunity
+                        to be
+                        trained in Cricket Academy of Pathans (CAP) for 5 years which is their highly recognised Cricket
+                        Development Sports Scholarship. The best part of this scholarship is that the registration is
+                        done online and the trials are done in front of a 5 HD Camera set-up with full HD Video Analysis
+                        of your performance.
+                        <br><br>
+                        Excellence in sports can give you an upper hand in paying for your college fees with your
+                        athletic talents. Given the ample opportunities for sports scholarships in India, gaining
+                        admission or getting a waiver can never be a hindrance in the equal pursuit of sporting success
+                        and education. Keep checking Leverage Edu for such awesome content!
+                    </p>
+                    <button id="myBtn" class="text-center"><a
+                            href="https://newsable.asianetnews.com/sports/bengaluru-gautam-gambhir-launches-fg-powerplayer-cricket-scholarship-trials-on-january-27-plqj69"
+                            target="_blank">If
+                            You Want To Know More
+                            Click Here</a></button><br>
+
+
+                </div>
+                <br><br><br>
+
+            </div>
+            <br><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <br><br><br> <div class="container">
+                <!-- Footer -->
+                <div class="container1">
+                    <footer class="page-footer font-small unique-color-dark" style="font-family:serif" ;>
+
+                        <div class="container1" style="background-color: #333" ;>
+                            <!-- <div class="container1"> -->
+
+                            <!-- Grid row-->
+                            <div class="row py-4 d-flex align-items-center">
+
+                                <!-- Grid column -->
+                                <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
+                                    <h6 class="mb-0" style="color:white">Get
+                                        connected with us on social networks!</h6>
+                                </div>
+                                <!-- Grid column -->
+
+                                <!-- Grid column -->
+                                <div class="col-md-6 col-lg-7 text-center text-md-right">
+
+                                    <!-- Facebook -->
+                                    <a class="fb-ic">
+                                        <i class="fab fa-facebook-f white-text mr-4">
+                                        </i>
+                                    </a>
+                                    <!-- Twitter -->
+                                    <a class="tw-ic">
+                                        <i class="fab fa-twitter white-text mr-4">
+                                        </i>
+                                    </a>
+                                    <!-- Google +-->
+                                    <a class="gplus-ic" href="https://www.google.co.in/">
+                                        <i class="fab fa-google-plus-g white-text mr-4">
+                                        </i>
+                                    </a>
+                                    <!--Linkedin -->
+                                    <a class="li-ic" href="https://www.linkedin.com/in/tejashri-agale-2324082001">
+                                        <i class="fab fa-linkedin-in white-text mr-4">
+                                        </i>
+                                    </a>
+                                    <!--Instagram-->
+                                    <a class="ins-ic">
+                                        <i class="fab fa-instagram white-text"> </i>
+                                    </a>
+
+                                </div>
+                                <!-- Grid column -->
+
+                            </div>
+                            <!-- Grid row-->
+
+                        </div>
+                </div>
+
+                <!-- Footer Links -->
+                <div class="container text-center text-md-left mt-5">
+
+                    <!-- Grid row -->
+                    <div class="row mt-3">
+
+                        <!-- Grid column -->
+                        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4" style="font-family: Times New Roman" ;>
+
+                            <!-- Content -->
+                            <h6 class="text-uppercase font-weight-bold">India At
+                                Olympics</h6>
+                            <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                            <p>This Is Our Capstone Project in Tech Saksham,This
+                                Website basically contain information about
+                                India's Performance at Olympics<br>
+                            </p>
+
+                        </div>
+                        <!-- Grid column -->
+
+                        <!-- Grid column -->
+                        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4" style="font-family: Times New Roman" ;>
+
+                            <!-- Links -->
+                            <h6 class="text-uppercase font-weight-bold">Social Media
+                            </h6>
+                            <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                            <p>
+                                <a href="http://instagram.com/tejashri_agale_2324?utm_source=qr"
+                                    target="_blank">Instagram</a>
+                            </p>
+                            <p>
+                                <a href="#!">Telegram</a>
+                            </p>
+                            <p>
+                                <a href="#!">Facebook</a>
+                            </p>
+                            <p>
+                                <a href="https://www.linkedin.com/in/tejashri-agale-2324082001"
+                                    target="_blank">Linkedin</a>
+
+                            </p>
+
+                        </div>
+                        <!-- Grid column -->
+
+                        <!-- Grid column -->
+                        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4" style="font-family: Times New Roman" ;>
+
+                            <!-- Links -->
+                            <h6 class="text-uppercase font-weight-bold">Useful links
+                            </h6>
+                            <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                            <p>
+                                <a href="reg.php">Your Account</a>
+                            </p>
+                            <p>
+                                <a href="game.php">Games</a>
+                            </p>
+                            <p>
+                                <a href="sports.html">Sports</a>
+                            </p>
+                            <p>
+                                <a href="more.php">for More Info</a>
+                            </p>
+
+
+                        </div>
+                        <!-- Grid column -->
+
+                        <!-- Grid column -->
+                        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4"
+                            style="font-family: Times New Roman" ;>
+
+                            <!-- Links -->
+                            <h6 class="text-uppercase font-weight-bold">Contact</h6>
+                            <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                            <p>
+                                <i class="fas fa-home mr-3"></i> India
+                            </p>
+                            <p>
+                                <i class="fas fa-envelope mr-3"></i>
+                                Olympic@gmail.com
+                            </p>
+                            <p>
+                                <i class="fas fa-phone mr-3"></i> + 01 234 567 88
+                            </p>
+                            <p>
+                                <i class="fas fa-print mr-3"></i> + 01 234 567 89
+                            </p>
+
+                        </div>
+                        <!-- Grid column -->
+
+                    </div>
+                    <!-- Grid row -->
+
+                </div>
+                <!-- Footer Links -->
+                <div style="background-color: #333" ;>
+                    <!-- <div class="container" > -->
+
+                    <!-- Grid row-->
+                    <div class="row py-4 d-flex align-items-center" style="font-family: Times New Roman" ;>
+
+
+                        <!-- Copyright -->
+                        <div class="footer-copyright text-center" style="color:white; font-family: Times New Roman" ;>©
+                            2021
+                            Copyright:
+                            <a href="https://mdbootstrap.com/" style="font-family: Times New Roman" ;> India At
+                                Olympics.com</a>
+                        </div>
+                        <!-- Copyright -->
+
+                        </footer>
+                    </div>
+
+                    <!-- Footer -->
+
+
+
+
+
+                    <!-- Optional JavaScript; choose one of the two! -->
+
+                    <!-- Option 1: Bootstrap Bundle with Popper -->
+                    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+                        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+                        crossorigin="anonymous"></script>
+
+                    <!-- Option 2: Separate Popper and Bootstrap JS -->
+                    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    -->
+</body>
+
+</html>

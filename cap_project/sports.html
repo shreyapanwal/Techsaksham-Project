@@ -1,0 +1,1358 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:400,900,900i" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <title>Sports</title>
+    <script>
+        $(document).ready(function () {
+            $("#myBtn").click(function () {
+                alert("You click on Read More");
+            });
+        });
+    </script>
+
+</head>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Verdana, sans-serif;
+    }
+
+    .mySlides {
+        display: none;
+    }
+
+    img {
+        vertical-align: middle;
+        height: 500px;
+    }
+
+    /* Slideshow container */
+    .slideshow-container {
+        max-width: 2000px;
+        position: relative;
+        margin: auto;
+    }
+
+    /* Caption text */
+    .text {
+        color: #f2f2f2;
+        font-size: 15px;
+        padding: 8px 12px;
+        position: absolute;
+        bottom: 8px;
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Number text (1/3 etc) */
+    .numbertext {
+        color: #f2f2f2;
+        font-size: 12px;
+        padding: 8px 12px;
+        position: absolute;
+        top: 0;
+    }
+
+    /* The dots/bullets/indicators */
+    .dot {
+        height: 15px;
+        width: 15px;
+        margin: 0 2px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.9s ease;
+    }
+
+    .active {
+        background-color: #717171;
+    }
+
+    /* Fading animation */
+    .fade {
+        -webkit-animation-name: fade;
+        -webkit-animation-duration: 1.8s;
+        animation-name: fade;
+        animation-duration: 1.8s;
+    }
+
+    @-webkit-keyframes fade {
+        from {
+            opacity: .4
+        }
+
+        to {
+            opacity: 1
+        }
+    }
+
+    @keyframes fade {
+        from {
+            opacity: .4
+        }
+
+        to {
+            opacity: 1
+        }
+    }
+
+    /* On smaller screens, decrease text size */
+    @media only screen and (max-width: 300px) {
+        .text {
+            font-size: 11px
+        }
+    }
+
+    #flip {
+        padding: 5px;
+        text-align: center;
+        color: white;
+        background-color: rgb(97, 96, 96);
+        border: solid 1px white;
+        border-radius: 8px;
+    }
+
+    #panel {
+        font-size: 4rem;
+        color: rgb(60, 7, 110);
+        font-family: 'Times New Roman', Times, serif;
+        font-weight: bold;
+        height: 200px;
+        text-align: center;
+        text-shadow: 2px 2px grey;
+    }
+
+
+    #panel {
+        padding: 50px;
+        display: none;
+    }
+
+    * {
+        top: 0;
+        left: 0;
+    }
+
+    .img-thumbnail {
+        height: 200px;
+        width: 100vh;
+        background-size: cover;
+
+    }
+
+    @media(max-width:700px) {
+        .heading h1 {
+            font-size: 3rem;
+        }
+    }
+
+    .row {
+        margin: auto;
+    }
+
+    .row .left button a {
+        text-decoration: none;
+        color: white;
+    }
+
+    #myBtn {
+        background-color: rgb(63, 62, 62);
+        color: white;
+        border-radius: 4px;
+        padding: 4px;
+        margin-bottom: 10px;
+    }
+
+    #myBtn:hover {
+        background-color: rgb(85, 2, 2);
+        color: white;
+    }
+
+    .row h4 {
+        text-decoration: underline;
+    }
+
+    .nav-item {
+        font-family: poppines;
+        font-size: 18px;
+    }
+
+    .left {
+        font-family: Georgia, serif;
+    }
+
+    body {
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .wrapper {
+        width: 1170px;
+        margin: auto;
+    }
+
+    .text-uppercase {
+        color: blue;
+    }
+
+    .text-uppercase:hover {
+        color: red;
+    }
+
+    .img-fluid {
+
+        height: 70vh;
+    }
+
+    #button {
+        display: inline-block;
+        background-color: rgb(63, 62, 62);
+        width: 50px;
+        height: 50px;
+        text-align: center;
+        border-radius: 8px;
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        transition: background-color .3s,
+            opacity .5s, visibility .5s;
+        opacity: 0;
+        visibility: hidden;
+        z-index: 1000;
+    }
+
+    #button::after {
+        content: "\f077";
+        font-family: FontAwesome;
+        font-weight: normal;
+        font-style: normal;
+        font-size: 2em;
+        line-height: 50px;
+        color: #fff;
+    }
+
+    #button:hover {
+        cursor: pointer;
+        background-color: #333;
+    }
+
+    #button:active {
+        background-color: #555;
+    }
+
+    #button.show {
+        opacity: 1;
+        visibility: visible;
+    }
+</style>
+
+<body>
+    <nav class="navbar navbar-light bg-light fixed-top">
+        <div class="container-fluid">
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+                aria-controls="offcanvasNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+                aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Sports At Olympics</h5>
+                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                        aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="index.php">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="sports.html">Sports</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="medal.html">Medals</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="" href="JavaScript QUiz/start.html">Quiz</a>
+                        </li>
+
+
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+    </nav>
+<br>
+    <div class="img-container text-center my-5">
+        <img src="img/c3.png" style="width:60%" ; alt="" class="img-fluid">
+        <div class="container heading text-center my-4">
+        </div>
+    </div>
+    <!-- <div id="flip">Click To View Heading</div>
+    <div id="panel">
+        Sports
+    </div>  -->
+
+    <!-- <div class="container heading text-center my-4">
+        <h1>Sports</h1>
+        <hr style="width:50% align-item:center";> <br>
+    </div>
+    <div class="slideshow-container">
+        <div class="mySlides fade text-center ">
+
+            <div class="numbertext">1 / 3</div>
+            <img
+                src="https://c.ndtvimg.com/2021-05/g3256hjg_mary-kom-bfi_625x300_30_May_21.jpg?im=FeatureCrop,algorithm=dnn,width=806,height=605" class="img-responsive" style="width:100vh">
+
+        </div>
+
+        <div class="mySlides fade text-center ">
+            <div class="numbertext">2 / 3</div>
+            <img src="https://cloudfront-us-east-2.images.arcpublishing.com/reuters/7ODRX54JVNMRNBWXQNG3R77CT4.jpg" class="img-responsive" style="width:100vh">
+
+        </div>
+        <div class="mySlides fade text-center">
+            <div class="numbertext">3/ 3</div>
+
+            <img src="https://static.toiimg.com/thumb/msid-85147663,width-1200,height-900,resizemode-4/.jpg" class="img-responsive" style="width:100vh">
+
+        </div>
+
+
+
+
+    </div>
+    <br>
+
+    <div style="text-align:center">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+    </div>-->
+
+    <!-- <script>
+        var slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1 }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+            setTimeout(showSlides, 2000); // Change image every 2 seconds
+        }
+    </script>  -->
+    <!-- Back to top button -->
+
+
+
+    <div class=" container">
+        <a id="button"></a>
+
+        <div class="container row">
+            <h4 class="text-danger my-4">3x3 basketball at the Summer Olympics</h4>
+            <div class="col-lg-4 col-md-4 col-sm-12 col-12 images right my-2">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/3x3_basketball_pictogram.svg/1024px-3x3_basketball_pictogram.svg.png"
+                    alt="" class="img-thumbnail">
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-12 col-12 left">
+                <p></p>>3x3 basketball was introduced at the Summer Olympic Games as an official Olympic sport at 2020.
+                On 9 June 2017, the executive board of the International Olympic Committee announced that 3x3
+                basketball would become an official Olympic sport as of the 2020 Summer Olympics in Tokyo, Japan,
+                for both men and women.(The 2020 Olympics was postponed to 2021 due to the COVID-19 pandemic).
+                </p>
+                <button id="myBtn" class="text-center"><a
+                        href="https://en.m.wikipedia.org/wiki/3x3_basketball_at_the_Summer_Olympics"
+                        target="_blank">Read
+                        More</a></button>
+
+
+            </div>
+            <br><br><br>
+            <hr>
+
+        </div>
+
+        <div class="container row">
+            <h4 class="text-danger my-4">Archery at the Summer Olympics</h4>
+            <div class="col-lg-4 col-md-4 col-sm-12 col-12 images right my-2">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Archery_pictogram.svg/1024px-Archery_pictogram.svg.png"
+                    alt="" class="img-thumbnail">
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-12 col-12 left">
+                <p>Archery had its debut at the 1900 Summer Olympics and has been contested in 16 Olympiads.
+                    Eighty-four nations have competed in the Olympic archery events, with France appearing the most
+                    often at 31 times. The most noticeable trend has been the excellence of South Korean archers,
+                    who have won 27 out of 39 gold medals in events since 1984. It is governed by the World Archery
+                    Federation. Recurve archery is the only discipline of archery featured at the Olympic Games.
+                    Archery is also an event at the Summer Paralympics.
+
+                </p>
+                <button id="myBtn" class="text-center"><a
+                        href="https://en.m.wikipedia.org/wiki/Archery_at_the_Summer_Olympics" target="_blank">Read
+                        More</a></button>
+            </div>
+            <br><br><br><br>
+            <hr>
+
+        </div>
+
+        <div class="container row">
+            <h4 class="text-danger my-4">Artistic swimming at the Summer Olympics</h4>
+            <div class="col-lg-4 col-md-4 col-sm-12 col-12 images right my-2">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Synchronized_swimming_pictogram.svg/1024px-Synchronized_swimming_pictogram.svg.png"
+                    alt="" class="img-thumbnail">
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-12 col-12 left">
+                <p>Artistic swimming (known as synchronised swimming until 2017) has been an event at the Summer
+                    Olympics since the 1984 Games. The current Olympic program has competition in duet and team
+                    events, but in past games, there was also a solo event. The United States, Canada and Japan
+                    have traditionally been the strongest nations in the sport, winning the Olympic medals from
+                    1984 through 1996, but Russia has recently dominated, winning every event between 2000 and
+                    2016.
+                </p>
+                <button id="myBtn" class="text-center"><a
+                        href="https://en.m.wikipedia.org/wiki/Artistic_swimming_at_the_Summer_Olympics"
+                        target="_blank">Read More</a></button>
+            </div>
+            <br><br><br><br>
+            <hr>
+
+        </div>
+
+        <div class="container row">
+            <h4 class="text-danger my-4">Athletics at the Summer Olympics</h4>
+            <div class="col-lg-4 col-md-4 col-sm-12 col-12 images right my-2">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Athletics_pictogram.svg/225px-Athletics_pictogram.svg.png"
+                    alt="" class="img-thumbnail">
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-12 col-12 left">
+                <p>Athletics has been contested at every Summer Olympics since the birth of the modern
+                    Olympic movement at the 1896 Summer Olympics. The athletics program traces its earliest
+                    roots to events used in the ancient Greek Olympics. The modern program includes track
+                    and field events, road running events, and racewalking events. Cross country running was
+                    also on the program in earlier editions but it was dropped after the 1924 Summer
+                    Olympics. </p>
+                <button id="myBtn" class="text-center"><a
+                        href="https://en.m.wikipedia.org/wiki/Athletics_at_the_Summer_Olympics" target="_blank">Read
+                        More</a></button>
+            </div>
+            <br><br><br><br>
+            <hr>
+
+        </div>
+
+        <div class="container row">
+            <h4 class="text-danger my-4">Badminton at the Summer Olympics</h4>
+            <div class="col-lg-4 col-md-4 col-sm-12 col-12 images right my-2">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Badminton_pictogram.svg/225px-Badminton_pictogram.svg.png"
+                    alt="" class="img-thumbnail">
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-12 col-12 left">
+                <p>Badminton had its debut as official event on the 1992 Summer Olympics and has been
+                    contested in eight Olympiads. 74 different nations have appeared in the Olympic
+                    badminton competitions, with 18 appearing all eight times. It is governed by the
+                    Badminton World Federation. </p>
+                <button id="myBtn" class="text-center"><a
+                        href="https://en.m.wikipedia.org/wiki/Badminton_at_the_Summer_Olympics" target="_blank">Read
+                        More</a></button>
+            </div>
+            <br><br><br><br>
+            <hr>
+
+        </div>
+
+        <div class="container row">
+            <h4 class="text-danger my-4">Baseball at the Summer Olympics</h4>
+            <div class="col-lg-4 col-md-4 col-sm-12 col-12 images right my-2">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Baseball_pictogram.svg/1024px-Baseball_pictogram.svg.png"
+                    alt="" class="img-thumbnail">
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-12 col-12 left">
+                <p> Baseball at the Summer Olympics unofficially debuted at the 1904 Summer Olympics
+                    in St. Louis,[a] and was first contested as a demonstration sport at the 1912
+                    Summer Olympics in Stockholm. It became an official Olympic sport at the 1992
+                    Summer Olympics in Barcelona, then was played at each Olympiad through the 2008
+                    Summer Olympics in Beijing. The sport was then dropped from the Summer Olympic
+                    program, until being revived for the 2020 Summer Olympics in Tokyo for a single
+                    appearance. It is next expected to be part of the 2028 Summer Olympics in Los
+                    Angeles. </p>
+                <button id="myBtn" class="text-center"><a
+                        href="https://en.m.wikipedia.org/wiki/Baseball_at_the_Summer_Olympics" target="_blank">Read
+                        More</a></button>
+            </div>
+            <br><br><br><br>
+            <hr>
+
+        </div>
+
+        <div class="container row">
+            <h4 class="text-danger my-4">Basketball at the Summer Olympics</h4>
+            <div class="col-lg-4 col-md-4 col-sm-12 col-12 images right my-2">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Basketball_pictogram.svg/1024px-Basketball_pictogram.svg.png"
+                    alt="" class="img-thumbnail">
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-12 col-12 left">
+                <p>Basketball at the Summer Olympics has been a sport for men consistently since
+                    1936. Prior to its inclusion as a medal sport, basketball was held as a
+                    demonstration event in 1904. Women's basketball made its debut in the Summer
+                    Olympics in 1976. FIBA organizes both the men's and women's FIBA World
+                    Olympic Qualifying Tournaments and the Summer Olympics basketball
+                    tournaments, which are sanctioned by the IOC. </p>
+                <button id="myBtn" class="text-center"><a
+                        href="https://en.m.wikipedia.org/wiki/Basketball_at_the_Summer_Olympics" target="_blank">Read
+                        More</a></button>
+            </div>
+            <br><br><br><br>
+            <hr>
+
+        </div>
+
+        <div class="container row">
+            <h4 class="text-danger my-4">Beach volleyball at the Summer Olympics</h4>
+            <div class="col-lg-4 col-md-4 col-sm-12 col-12 images right my-2">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Volleyball_%28beach%29_pictogram.svg/225px-Volleyball_%28beach%29_pictogram.svg.png"
+                    alt="" class="img-thumbnail">
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-12 col-12 left">
+                <p>Beach volleyball was introduced at the Summer Olympic Games in the 1992
+                    Games as a demonstration event, and has been an official Olympic sport
+                    since 1996. The United States are the only country to win medals in
+                    every edition, followed by Brazil, who had their medal streak broken in
+                    the 2020 tournament. </p>
+                <button id="myBtn" class="text-center"><a
+                        href="https://en.m.wikipedia.org/wiki/Beach_volleyball_at_the_Summer_Olympics"
+                        target="_blank">Read More</a></button>
+            </div>
+            <br><br><br><br>
+            <hr>
+
+        </div>
+
+        <div class="container row">
+            <h4 class="text-danger my-4">Boxing at the Summer Olympics</h4>
+            <div class="col-lg-4 col-md-4 col-sm-12 col-12 images right my-2">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Boxing_pictogram.svg/225px-Boxing_pictogram.svg.png"
+                    alt="" class="img-thumbnail">
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-12 col-12 left">
+                <p>Boxing has been contested at every Summer Olympic Games since its
+                    introduction to the program at the 1904 Summer Olympics, except for
+                    the 1912 Summer Olympics in Stockholm, because Swedish law banned
+                    the sport at the time. The 2008 Summer Olympics were the final games
+                    with boxing as a male only event. Since the 2012 Summer Olympics,
+                    women's boxing is part of the program. </p>
+                <button id="myBtn" class="text-center"><a
+                        href="https://en.m.wikipedia.org/wiki/Boxing_at_the_Summer_Olympics" target="_blank">Read
+                        More</a></button>
+            </div>
+            <br><br><br><br>
+            <hr>
+
+        </div>
+
+        <div class="container row">
+            <h4 class="text-danger my-4">Canoeing at the Summer Olympics</h4>
+            <div class="col-lg-4 col-md-4 col-sm-12 col-12 images right my-2">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Canoeing_%28slalom%29_pictogram.svg/1024px-Canoeing_%28slalom%29_pictogram.svg.png"
+                    alt="" class="img-thumbnail">
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-12 col-12 left">
+                <p>Canoeing has been featured as competition sports in the Summer
+                    Olympic Games since the 1936 Games in Berlin, although they were
+                    demonstration sports at the 1924 Games in Paris.[1] There are
+                    two disciplines of canoeing in Olympic competition: slalom and
+                    sprint. </p>
+                <button id="myBtn" class="text-center"><a
+                        href="https://en.m.wikipedia.org/wiki/Canoeing_at_the_Summer_Olympics" target="_blank">Read
+                        More</a></button>
+            </div>
+            <br><br><br><br>
+            <hr>
+
+        </div>
+
+        <div class="container row">
+            <h4 class="text-danger my-4">Cycling at the Summer Olympics</h4>
+            <div class="col-lg-4 col-md-4 col-sm-12 col-12 images right my-2">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Cycling_%28road%29_pictogram.svg/225px-Cycling_%28road%29_pictogram.svg.png"
+                    alt="" class="img-thumbnail">
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-12 col-12 left">
+                <p>Cycling has been contested at every Summer Olympic Games
+                    since the birth of the modern Olympic movement at the 1896
+                    Summer Olympics, at which a road race and five track events
+                    were held. Mountain bike racing entered the Olympic
+                    programme at the Atlanta Olympics, followed by BMX racing in
+                    2008 and freestyle BMX in 2020. Prior to the 2020 Summer
+                    Olympics (which was postponed to 2021 due to the COVID-19
+                    pandemic),all events were speed races. </p>
+                <button id="myBtn" class="text-center"><a
+                        href="https://en.m.wikipedia.org/wiki/Cycling_at_the_Summer_Olympics" target="_blank">Read
+                        More</a></button>
+            </div>
+            <br><br><br><br>
+            <hr>
+
+        </div>
+
+        <div class="container row">
+            <h4 class="text-danger my-4">Diving at the Summer Olympics</h4>
+            <div class="col-lg-4 col-md-4 col-sm-12 col-12 images right my-2">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Diving_pictogram.svg/225px-Diving_pictogram.svg.png"
+                    alt="" class="img-thumbnail">
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-12 col-12 left">
+                <p>Diving was first introduced in the official programme of
+                    the Summer Olympic Games at the 1904 Games of St. Louis
+                    and has been an Olympic sport since. It was known as
+                    "fancy diving" for the acrobatic stunts performed by
+                    divers during the dive (such as somersaults and twists).
+                    This discipline of Aquatics, along with swimming,
+                    synchronised swimming and water polo, is regulated and
+                    supervised by the International Swimming Federation
+                    (FINA).., </p>
+                <button id="myBtn" class="text-center"><a
+                        href="https://en.m.wikipedia.org/wiki/Diving_at_the_Summer_Olympics" target="_blank">Read
+                        More</a></button>
+            </div>
+            <br><br><br><br>
+            <hr>
+
+        </div>
+        <div class="container row">
+            <h4 class="text-danger my-4">Equestrian at the Summer Olympics</h4>
+            <div class="col-lg-4 col-md-4 col-sm-12 col-12 images right my-2">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Equestrian_pictogram.svg/225px-Equestrian_pictogram.svg.png"
+                    alt="" class="img-thumbnail">
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-12 col-12 left">
+                <p> Equestrianism made its Summer Olympics debut at the 1900 Summer Olympics in Paris, France. It
+                    disappeared until 1912, but has appeared at every Summer Olympic Games since. The current Olympic
+                    equestrian disciplines are Dressage, Eventing, and Jumping. In each discipline, both individual and
+                    team medals are awarded. Women and men compete together on equal terms.</p>
+                <button id="myBtn" class="text-center"><a
+                        href="https://en.m.wikipedia.org/wiki/Equestrian_at_the_Summer_Olympics" target="_blank">Read
+                        More</a></button>
+            </div>
+            <br><br><br><br>
+            <hr>
+
+        </div>
+        <div class="container row">
+            <h4 class="text-danger my-4">Field hockey at the Summer Olympics</h4>
+            <div class="col-lg-4 col-md-4 col-sm-12 col-12 images right my-2">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Field_hockey_pictogram.svg/225px-Field_hockey_pictogram.svg.png"
+                    alt="" class="img-thumbnail">
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-12 col-12 left">
+                <p>Field hockey was introduced at the Olympic Games as a men's competition at the 1908 Games in London,
+                    with six teams, four from the United Kingdom of Great Britain and Ireland and other two were France
+                    and Germany. </p>
+                <button id="myBtn" class="text-center"><a
+                        href="https://en.m.wikipedia.org/wiki/Field_hockey_at_the_Summer_Olympics" target="_blank">Read
+                        More</a></button>
+            </div>
+            <br><br><br><br>
+            <hr>
+
+        </div>
+        <div class="container row">
+            <h4 class="text-danger my-4">Fencing at the Summer Olympics</h4>
+            <div class="col-lg-4 col-md-4 col-sm-12 col-12 images right my-2">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Fencing_pictogram.svg/225px-Fencing_pictogram.svg.png"
+                    alt="" class="img-thumbnail">
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-12 col-12 left">
+                <p> Fencing has been contested at every Summer Olympic Games since the birth of the modern Olympic
+                    movement at the 1896 Summer Olympics in Athens. There are three forms of Olympic fencing:
+
+                    <br> Foil — a light thrusting weapon; the valid target is restricted to the torso; double touches
+                    are not allowed.
+                    <br> Épée — a heavy thrusting weapon; the valid target area covers the entire body; double touches
+                    are allowed.
+                    <br> Sabre — a light cutting and thrusting weapon; the valid target area includes almost everything
+                    above the waist (excluding the back of the head and the hands); double touches are not allowed.
+                    <br>
+                </p>
+                <button id="myBtn" class="text-center"><a
+                        href="https://en.m.wikipedia.org/wiki/Fencing_at_the_Summer_Olympics" target="_blank">Read
+                        More</a></button>
+            </div>
+            <br><br><br><br>
+            <hr>
+
+        </div>
+        <div class="container row">
+            <h4 class="text-danger my-4">Football at the Summer Olympics</h4>
+            <div class="col-lg-4 col-md-4 col-sm-12 col-12 images right my-2">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Football_pictogram.svg/225px-Football_pictogram.svg.png"
+                    alt="" class="img-thumbnail">
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-12 col-12 left">
+                <p>Football at the Summer Olympics, referred to as the Olympic Football Tournament,[note 1] has been
+                    included in every Summer Olympic Games as a men's competition sport, except 1896 (the inaugural
+                    Games) and 1932 (in an attempt to promote the new FIFA World Cup tournament). Women's football was
+                    added to the official program at the 1996 Atlanta Games. </p>
+                <button id="myBtn" class="text-center"><a
+                        href="https://en.m.wikipedia.org/wiki/Football_at_the_Summer_Olympics" target="_blank">Read
+                        More</a></button>
+            </div>
+            <br><br><br><br>
+            <hr>
+
+        </div>
+        <div class="container row">
+            <h4 class="text-danger my-4">Gymnastics at the Summer Olympics</h4>
+            <div class="col-lg-4 col-md-4 col-sm-12 col-12 images right my-2">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Gymnastics_%28artistic%29_pictogram.svg/225px-Gymnastics_%28artistic%29_pictogram.svg.png"
+                    alt="" class="img-thumbnail">
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-12 col-12 left">
+                <p> Gymnastics events have been contested at every Summer Olympic Games since the birth of the modern
+                    Olympic movement at the 1896 Summer Olympics in Athens. For 32 years, only men were allowed to
+                    compete. Beginning at the 1928 Summer Olympics in Amsterdam, women were allowed to compete in
+                    artistic gymnastics events as well. Rhythmic gymnastics events were introduced at the 1984 Summer
+                    Olympics in Los Angeles, and trampoline events were added at the 2000 Summer Olympics in Sydney.</p>
+                <button id="myBtn" class="text-center"><a
+                        href="https://en.m.wikipedia.org/wiki/Gymnastics_at_the_Summer_Olympics" target="_blank">Read
+                        More</a></button>
+            </div>
+            <br><br><br><br>
+            <hr>
+
+        </div>
+        <div class="container row">
+            <h4 class="text-danger my-4">Golf at the Summer Olympics</h4>
+            <div class="col-lg-4 col-md-4 col-sm-12 col-12 images right my-2">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Golf_pictogram.svg/225px-Golf_pictogram.svg.png"
+                    alt="" class="img-thumbnail">
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-12 col-12 left">
+                <p> Golf was featured in the Summer Olympic Games official programme in 1900 and 1904. At the IOC
+                    session in Copenhagen in October 2009, the IOC decided to reinstate this event for the 2016 Summer
+                    Olympics.The International Golf Federation is governing body for golf at the Olympic Games.
+                    As of the 2016 Olympics, qualification is based primarily upon the Official World Golf Ranking </p>
+                <button id="myBtn" class="text-center"><a
+                        href="https://en.m.wikipedia.org/wiki/Golf_at_the_Summer_Olympics" target="_blank">Read
+                        More</a></button>
+            </div>
+            <br><br><br><br>
+            <hr>
+
+        </div>
+        <div class="container row">
+            <h4 class="text-danger my-4">Handball at the Summer Olympics</h4>
+            <div class="col-lg-4 col-md-4 col-sm-12 col-12 images right my-2">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Handball_pictogram.svg/225px-Handball_pictogram.svg.png"
+                    alt="" class="img-thumbnail">
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-12 col-12 left">
+                <p>Handball at the Summer Olympics refers to two different sports. Field handball was introduced for men
+                    at the 1936 Summer Olympics in Berlin, but dropped after that. At the 1952 Olympics, field handball
+                    was a demonstration sport. (Indoor) handball was introduced for men at the 1972 Summer Olympics in
+                    Munich. Women's handball competition was introduced at the 1976 Summer Olympics in Montreal. </p>
+                <button id="myBtn" class="text-center"><a
+                        href="https://en.m.wikipedia.org/wiki/Handball_at_the_Summer_Olympics" target="_blank">Read
+                        More</a></button>
+            </div>
+            <br><br><br><br>
+            <hr>
+
+        </div>
+        <div class="container row">
+            <h4 class="text-danger my-4">Judo at the Summer Olympics</h4>
+            <div class="col-lg-4 col-md-4 col-sm-12 col-12 images right my-2">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Judo_pictogram.svg/225px-Judo_pictogram.svg.png"
+                    alt="" class="img-thumbnail">
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-12 col-12 left">
+                <p>Judo was first included in the Summer Olympic Games at the 1964 Games in Tokyo, Japan.[1] After not
+                    being included in 1968, judo has been an Olympic sport in each Olympiad since then. Only male
+                    judoka participated until the 1988 Summer Olympics, when women participated as a demonstration
+                    sport. Women judoka were first awarded medals at the 1992 Summer Olympics. </p>
+                <button id="myBtn" class="text-center"><a
+                        href="https://en.m.wikipedia.org/wiki/Judo_at_the_Summer_Olympics" target="_blank">Read
+                        More</a></button>
+            </div>
+            <br><br><br><br>
+            <hr>
+
+        </div>
+        <div class="container row">
+            <h4 class="text-danger my-4">Karate at the Summer Olympics</h4>
+            <div class="col-lg-4 col-md-4 col-sm-12 col-12 images right my-2">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Karate_pictogram.svg/225px-Karate_pictogram.svg.png"
+                    alt="" class="img-thumbnail">
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-12 col-12 left">
+                <p>Karate at the Summer Olympics made its debut at the 2020 Games in Tokyo, Japan.Olympic karate
+                    featured two types of events: Kumite and Kata. Sixty competitors from around the world competed in
+                    the Kumite competition, and twenty competed in the Kata competition. Both divisions of the
+                    competition were split 50/50 between men and women. </p>
+                <button id="myBtn" class="text-center"><a
+                        href="https://en.m.wikipedia.org/wiki/Karate_at_the_Summer_Olympics" target="_blank">Read
+                        More</a></button>
+            </div>
+            <br><br><br><br>
+            <hr>
+
+        </div>
+        <div class="container row">
+            <h4 class="text-danger my-4">Modern pentathlon at the Summer Olympics</h4>
+            <div class="col-lg-4 col-md-4 col-sm-12 col-12 images right my-2">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Modern_pentathlon_pictogram.svg/225px-Modern_pentathlon_pictogram.svg.png"
+                    alt="" class="img-thumbnail">
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-12 col-12 left">
+                <p>Modern pentathlon is a sport contested at the Summer Olympic Games. </p>
+                <button id="myBtn" class="text-center"><a
+                        href="https://en.m.wikipedia.org/wiki/Modern_pentathlon_at_the_Summer_Olympics"
+                        target="_blank">Read
+                        More</a></button>
+            </div>
+            <br><br><br><br>
+            <hr>
+
+        </div>
+        <div class="container row">
+            <h4 class="text-danger my-4">Rowing at the Summer Olympics</h4>
+            <div class="col-lg-4 col-md-4 col-sm-12 col-12 images right my-2">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Rowing_pictogram.svg/225px-Rowing_pictogram.svg.png"
+                    alt="" class="img-thumbnail">
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-12 col-12 left">
+                <p>Rowing at the Summer Olympics has been part of the competition since its debut in the 1900 Summer
+                    Olympics. Rowing was on the program at the 1896 Summer Olympics but was cancelled due to bad
+                    weather.Only men were allowed to compete until the women's events were introduced at the 1976
+                    Summer Olympics in Montreal which gave national federations the incentive to support women's events
+                    and catalysed growth in women's rowing. </p>
+                <button id="myBtn" class="text-center"><a
+                        href="https://en.m.wikipedia.org/wiki/Rowing_at_the_Summer_Olympics" target="_blank">Read
+                        More</a></button>
+            </div>
+            <br><br><br><br>
+            <hr>
+
+        </div>
+        <div class="container row">
+            <h4 class="text-danger my-4">Rugby sevens at the Summer Olympics</h4>
+            <div class="col-lg-4 col-md-4 col-sm-12 col-12 images right my-2">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Rugby_sevens_pictogram.svg/225px-Rugby_sevens_pictogram.svg.png"
+                    alt="" class="img-thumbnail">
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-12 col-12 left">
+                <p>Rugby sevens at the Summer Olympics was played for the first time at the 2016 Summer Olympics with
+                    both men's and women's contests. Rugby sevens was added to the Olympics following the decision of
+                    the 121st IOC Session in Copenhagen in October 2009. The champions for the inaugural rugby sevens
+                    tournament in 2016 were Fiji for the men and Australia for the women. Prior to 2016, 15-a-side
+                    matches were played in 1900, 1908, 1920, and 1924. </p>
+                <button id="myBtn" class="text-center"><a
+                        href="https://en.m.wikipedia.org/wiki/Rugby_sevens_at_the_Summer_Olympics" target="_blank">Read
+                        More</a></button>
+            </div>
+            <br><br><br><br>
+            <hr>
+
+        </div>
+        <div class="container row">
+            <h4 class="text-danger my-4">Sailing at the Summer Olympics</h4>
+            <div class="col-lg-4 col-md-4 col-sm-12 col-12 images right my-2">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Sailing_pictogram.svg/225px-Sailing_pictogram.svg.png"
+                    alt="" class="img-thumbnail">
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-12 col-12 left">
+                <p> Sailing (also known as yachting until 2000) has been one of the Olympic sports since the Games of
+                    the I Olympiad, held in Athens, Greece, in 1896. Despite being scheduled in the first Olympic
+                    program, the races were canceled due to severe weather conditions. Apart from the 1904 Summer
+                    Olympics, sailing has been present in every edition of the Olympic Games.</p>
+                <button id="myBtn" class="text-center"><a
+                        href="https://en.m.wikipedia.org/wiki/Sailing_at_the_Summer_Olympics#" target="_blank">Read
+                        More</a></button>
+            </div>
+            <br><br><br><br>
+            <hr>
+
+        </div>
+        <div class="container row">
+            <h4 class="text-danger my-4">Shooting at the Summer Olympics</h4>
+            <div class="col-lg-4 col-md-4 col-sm-12 col-12 images right my-2">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Shooting_pictogram.svg/225px-Shooting_pictogram.svg.png"
+                    alt="" class="img-thumbnail">
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-12 col-12 left">
+                <p>Shooting sports have been included at every Summer Olympic Games since the birth of the modern
+                    Olympic movement at the 1896 Summer Olympics except at the 1904 and 1928 games. </p>
+                <button id="myBtn" class="text-center"><a
+                        href="https://en.m.wikipedia.org/wiki/Shooting_at_the_Summer_Olympics" target="_blank">Read
+                        More</a></button>
+            </div>
+            <br><br><br><br>
+            <hr>
+
+        </div>
+        <div class="container row">
+            <h4 class="text-danger my-4">Skateboarding at the Summer Olympics</h4>
+            <div class="col-lg-4 col-md-4 col-sm-12 col-12 images right my-2">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Skateboarding_pictogram.svg/225px-Skateboarding_pictogram.svg.png"
+                    alt="" class="img-thumbnail">
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-12 col-12 left">
+                <p>Skateboarding made its debut appearance at the 2020 Summer Olympics in 2020 in Tokyo, Japan. It has
+                    also been provisionally approved by the IOC for inclusion at the 2024 Olympic Games in Paris. </p>
+                <button id="myBtn" class="text-center"><a
+                        href="https://en.m.wikipedia.org/wiki/Skateboarding_at_the_Summer_Olympics" target="_blank">Read
+                        More</a></button>
+            </div>
+            <br><br><br><br>
+            <hr>
+
+        </div>
+        <div class="container row">
+            <h4 class="text-danger my-4">Softball at the Summer Olympics</h4>
+            <div class="col-lg-4 col-md-4 col-sm-12 col-12 images right my-2">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Softball_pictogram.svg/225px-Softball_pictogram.svg.png"
+                    alt="" class="img-thumbnail">
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-12 col-12 left">
+                <p>Softball at the Summer Olympics was on the Olympic programme from 1996 to 2008. It was introduced at
+                    the 1996 Atlanta Olympics. Softball was removed from the programme for 2012 and 2016, but was added
+                    for a one-off appearance, along with baseball, for the 2020 Summer Olympics (which was postponed to
+                    2021 due to the COVID-19 pandemic). </p>
+                <button id="myBtn" class="text-center"><a
+                        href="https://en.m.wikipedia.org/wiki/Softball_at_the_Summer_Olympics" target="_blank">Read
+                        More</a></button>
+            </div>
+            <br><br><br><br>
+            <hr>
+
+        </div>
+        <div class="container row">
+            <h4 class="text-danger my-4">Sport climbing at the Summer Olympics</h4>
+            <div class="col-lg-4 col-md-4 col-sm-12 col-12 images right my-2">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Climbing_pictogram.svg/225px-Climbing_pictogram.svg.png"
+                    alt="" class="img-thumbnail">
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-12 col-12 left">
+                <p>Sport climbing made its Olympic debut at the 2020 Summer Olympics in Tokyo, Japan. The Olympics was
+                    originally scheduled to be held in 2020, but was postponed to 2021 due to COVID-19 pandemic.It is
+                    governed by the International Federation of Sport Climbing (IFSC). </p>
+                <button id="myBtn" class="text-center"><a
+                        href="https://en.m.wikipedia.org/wiki/Sport_climbing_at_the_Summer_Olympics"
+                        target="_blank">Read
+                        More</a></button>
+            </div>
+            <br><br><br><br>
+            <hr>
+
+        </div>
+        <div class="container row">
+            <h4 class="text-danger my-4">Surfing at the Summer Olympics</h4>
+            <div class="col-lg-4 col-md-4 col-sm-12 col-12 images right my-2">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Surfing_pictogram.svg/225px-Surfing_pictogram.svg.png"
+                    alt="" class="img-thumbnail">
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-12 col-12 left">
+                <p> Surfing made its debut appearance at the 2020 Summer Olympics in 2020 in Tokyo, Japan. It has also
+                    been approved by the IOC for inclusion at the 2024 Olympic Games in Paris.</p>
+                <button id="myBtn" class="text-center"><a
+                        href="https://en.m.wikipedia.org/wiki/Surfing_at_the_Summer_Olympics" target="_blank">Read
+                        More</a></button>
+            </div>
+            <br><br><br><br>
+            <hr>
+
+        </div>
+        <div class="container row">
+            <h4 class="text-danger my-4">Swimming at the Summer Olympics</h4>
+            <div class="col-lg-4 col-md-4 col-sm-12 col-12 images right my-2">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Swimming_pictogram.svg/225px-Swimming_pictogram.svg.png"
+                    alt="" class="img-thumbnail">
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-12 col-12 left">
+                <p>Swimming has been a sport at every modern Summer Olympics. It has been open to women since 1912.
+                    Swimming has the second-highest number of Olympic medal contested events after athletics. </p>
+                <button id="myBtn" class="text-center"><a
+                        href="https://en.m.wikipedia.org/wiki/Swimming_at_the_Summer_Olympics" target="_blank">Read
+                        More</a></button>
+            </div>
+            <br><br><br><br>
+            <hr>
+
+        </div>
+
+        <div class="container row">
+            <h4 class="text-danger my-4">Table tennis at the Summer Olympics</h4>
+            <div class="col-lg-4 col-md-4 col-sm-12 col-12 images right my-2">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Table_tennis_pictogram.svg/225px-Table_tennis_pictogram.svg.png"
+                    alt="" class="img-thumbnail">
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-12 col-12 left">
+                <p>Table tennis competition has been in the Summer Olympic Games since 1988, with singles and doubles
+                    events for men and women.[1][2] Athletes from China have dominated the sport, winning a total of 60
+                    medals in 37 events, including 32 out of a possible 37 gold medals, and only failing to win at least
+                    one medal in one event, the inaugural Men's Singles event at the 1988 Summer Olympics. </p>
+                <button id="myBtn" class="text-center"><a
+                        href="https://en.m.wikipedia.org/wiki/Table_tennis_at_the_Summer_Olympics" target="_blank">Read
+                        More</a></button>
+            </div>
+            <br><br><br><br>
+            <hr>
+
+        </div>
+        <div class="container row">
+            <h4 class="text-danger my-4">Taekwondo at the Summer Olympics</h4>
+            <div class="col-lg-4 col-md-4 col-sm-12 col-12 images right my-2">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Taekwondo_pictogram.svg/225px-Taekwondo_pictogram.svg.png"
+                    alt="" class="img-thumbnail">
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-12 col-12 left">
+                <p>Taekwondo at the Summer Olympics made its first appearance as a demonstration sport at the 1988
+                    Summer Olympics in Seoul, South Korea. The opening ceremony featured a mass demonstration of
+                    taekwondo with hundreds of adults and children performing moves in unison. Taekwondo was again a
+                    demonstration sport at the 1992 Summer Olympics in Barcelona, Spain.[1] Taekwondo became a full
+                    medal sport at the 2000 Summer Olympics in Sydney, Australia, and has been a sport in the Olympic
+                    games since then. </p>
+                <button id="myBtn" class="text-center"><a
+                        href="https://en.m.wikipedia.org/wiki/Taekwondo_at_the_Summer_Olympics" target="_blank">Read
+                        More</a></button>
+            </div>
+            <br><br><br><br>
+            <hr>
+
+        </div>
+        <div class="container row">
+            <h4 class="text-danger my-4">Tennis at the Summer Olympics</h4>
+            <div class="col-lg-4 col-md-4 col-sm-12 col-12 images right my-2">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Tennis_pictogram.svg/225px-Tennis_pictogram.svg.png"
+                    alt="" class="img-thumbnail">
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-12 col-12 left">
+                <p>Tennis was part of the Summer Olympic Games program from the inaugural 1896 Summer Olympics, but was
+                    dropped after the 1924 Summer Olympics due to disputes between the International Lawn Tennis
+                    Federation and the International Olympic Committee over how to define amateur players.After two
+                    appearances as a demonstration sport in 1968 and 1984 (with a U-21 age limit), </p>
+                <button id="myBtn" class="text-center"><a
+                        href="https://en.m.wikipedia.org/wiki/Tennis_at_the_Summer_Olympics" target="_blank">Read
+                        More</a></button>
+            </div>
+            <br><br><br><br>
+            <hr>
+
+        </div>
+        <div class="container row">
+            <h4 class="text-danger my-4">Triathlon at the Summer Olympics</h4>
+            <div class="col-lg-4 col-md-4 col-sm-12 col-12 images right my-2">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Triathlon_pictogram.svg/225px-Triathlon_pictogram.svg.png"
+                    alt="" class="img-thumbnail">
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-12 col-12 left">
+                <p>Triathlon had its Summer Olympics debut at the 2000 Games, in Sydney, when men's and women's
+                    individual events were first held, and has been contested since then. In 2021, at the delayed 2020
+                    Summer Olympics a mixed team relay event was held for the first time. The sport, and its Olympic
+                    events, are governed by the International Triathlon Union, known since 2019 as World Triathlon. </p>
+                <button id="myBtn" class="text-center"><a
+                        href="https://en.m.wikipedia.org/wiki/Triathlon_at_the_Summer_Olympics" target="_blank">Read
+                        More</a></button>
+            </div>
+            <br><br><br><br>
+            <hr>
+
+        </div>
+        <div class="container row">
+            <h4 class="text-danger my-4">Volleyball at the Summer Olympics</h4>
+            <div class="col-lg-4 col-md-4 col-sm-12 col-12 images right my-2">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Volleyball_%28indoor%29_pictogram.svg/225px-Volleyball_%28indoor%29_pictogram.svg.png"
+                    alt="" class="img-thumbnail">
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-12 col-12 left">
+                <p>Volleyball has been part of the Summer Olympics program for both men and women consistently since
+                    1964.Brazil, United States, and the former Soviet Union are the only teams to win multiple gold
+                    medals at the men's tournament since its introduction. The remaining six editions of the Men's
+                    Olympic Volleyball Tournament were won each by a different </p>
+                <button id="myBtn" class="text-center"><a
+                        href=" https://en.m.wikipedia.org/wiki/Volleyball_at_the_Summer_Olympics" target="_blank">Read
+                        More</a></button>
+            </div>
+            <br><br><br><br>
+            <hr>
+
+        </div>
+        <div class="container row">
+            <h4 class="text-danger my-4">Water polo at the Summer Olympics</h4>
+            <div class="col-lg-4 col-md-4 col-sm-12 col-12 images right my-2">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Water_polo_pictogram.svg/225px-Water_polo_pictogram.svg.png"
+                    alt="" class="img-thumbnail">
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-12 col-12 left">
+                <p> Water polo has been part of the Summer Olympics program since the second games, in 1900. A women's
+                    water polo tournament was introduced for the 2000 Summer Olympics. Hungary has been the most
+                    successful country in men's tournament, while the United States is the only team to win multiple
+                    times at the women's tournament since its introduction. Italy is the first and only country to win
+                    both the men's and women's water polo tournaments.</p>
+                <button id="myBtn" class="text-center"><a
+                        href="https://en.m.wikipedia.org/wiki/Water_polo_at_the_Summer_Olympics" target="_blank">Read
+                        More</a></button>
+            </div>
+            <br><br><br><br>
+            <hr>
+
+        </div>
+        <div class="container row">
+            <h4 class="text-danger my-4">Weightlifting at the Summer Olympics</h4>
+            <div class="col-lg-4 col-md-4 col-sm-12 col-12 images right my-2">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Weightlifting_pictogram.svg/225px-Weightlifting_pictogram.svg.png"
+                    alt="" class="img-thumbnail">
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-12 col-12 left">
+                <p>Weightlifting has been contested at every Summer Olympic Games since the 1920 Summer Olympics, as
+                    well as twice before then. It debuted at the 1896 Summer Olympics, in Athens, Greece, and was also
+                    an event at the 1904 Games. </p>
+                <button id="myBtn" class="text-center"><a
+                        href="https://en.m.wikipedia.org/wiki/Weightlifting_at_the_Summer_Olympics" target="_blank">Read
+                        More</a></button>
+            </div>
+            <br><br><br><br>
+            <hr>
+
+        </div>
+        <div class="container row">
+            <h4 class="text-danger my-4">Wrestling at the Summer Olympics</h4>
+            <div class="col-lg-4 col-md-4 col-sm-12 col-12 images right my-2">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Wrestling_pictogram.svg/225px-Wrestling_pictogram.svg.png"
+                    alt="" class="img-thumbnail">
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-12 col-12 left">
+                <p>Since the Olympic Games began in Athens in 1896, wrestling (in the form of Greco-Roman wrestling)
+                    became a focus of the Games, with the exception of the 1900 Summer Olympics when wrestling did not
+                    appear on the program. Freestyle wrestling and weight classes both made their first appearance in
+                    1904. The women's competition was introduced in 2004. </p>
+                <button id="myBtn" class="text-center"><a
+                        href="https://en.m.wikipedia.org/wiki/Wrestling_at_the_Summer_Olympics" target="_blank">Read
+                        More</a></button>
+            </div>
+            <br><br><br><br>
+
+
+        </div>
+
+        <!-- Footer -->
+        <div class="container1">
+            <footer class="page-footer font-small unique-color-dark" style="font-family:serif" ;>
+
+                <div class="container1" style="background-color: #333" ;>
+                    <!-- <div class="container1"> -->
+
+                    <!-- Grid row-->
+                    <div class="row py-4 d-flex align-items-center">
+
+                        <!-- Grid column -->
+                        <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
+                            <h6 class="mb-0" style="color:white">Get connected with us on social networks!</h6>
+                        </div>
+                        <!-- Grid column -->
+
+                        <!-- Grid column -->
+                        <div class="col-md-6 col-lg-7 text-center text-md-right">
+
+                            <!-- Facebook -->
+                            <a class="fb-ic">
+                                <i class="fab fa-facebook-f white-text mr-4"> </i>
+                            </a>
+                            <!-- Twitter -->
+                            <a class="tw-ic">
+                                <i class="fab fa-twitter white-text mr-4"> </i>
+                            </a>
+                            <!-- Google +-->
+                            <a class="gplus-ic" href="https://www.google.co.in/">
+                                <i class="fab fa-google-plus-g white-text mr-4"> </i>
+                            </a>
+                            <!--Linkedin -->
+                            <a class="li-ic" href="https://www.linkedin.com/in/tejashri-agale-2324082001">
+                                <i class="fab fa-linkedin-in white-text mr-4"> </i>
+                            </a>
+                            <!--Instagram-->
+                            <a class="ins-ic">
+                                <i class="fab fa-instagram white-text"> </i>
+                            </a>
+
+                        </div>
+                        <!-- Grid column -->
+
+                    </div>
+                    <!-- Grid row-->
+
+                </div>
+        </div>
+
+        <!-- Footer Links -->
+        <div class="container text-center text-md-left mt-5">
+
+            <!-- Grid row -->
+            <div class="row mt-3">
+
+                <!-- Grid column -->
+                <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4" style="font-family: Times New Roman" ;>
+
+                    <!-- Content -->
+                    <h6 class="text-uppercase font-weight-bold">India At Olympics</h6>
+                    <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                    <p>This Is Our Capstone Project in Tech Saksham,This Website basically contain information about
+                        India's Performance at Olympics<br>
+                    </p>
+
+                </div>
+                <!-- Grid column -->
+
+                <!-- Grid column -->
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4" style="font-family: Times New Roman" ;>
+
+                    <!-- Links -->
+                    <h6 class="text-uppercase font-weight-bold">Social Media</h6>
+                    <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                    <p>
+                        <a href="http://instagram.com/tejashri_agale_2324?utm_source=qr" target="_blank">Instagram</a>
+                    </p>
+                    <p>
+                        <a href="#!">Telegram</a>
+                    </p>
+                    <p>
+                        <a href="#!">Facebook</a>
+                    </p>
+                    <p>
+                        <a href="https://www.linkedin.com/in/tejashri-agale-2324082001" target="_blank">Linkedin</a>
+
+                    </p>
+
+                </div>
+                <!-- Grid column -->
+
+                <!-- Grid column -->
+                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4" style="font-family: Times New Roman" ;>
+
+                    <!-- Links -->
+                    <h6 class="text-uppercase font-weight-bold">Useful links</h6>
+                    <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                    <p>
+                        <a href="reg.php">Your Account</a>
+                    </p>
+                    <p>
+                        <a href="game.php">Games</a>
+                    </p>
+                    <p>
+                        <a href="sports.html">Sports</a>
+                    </p>
+                    <p>
+                        <a href="more.php">for More Info</a>
+                    </p>
+
+
+                </div>
+                <!-- Grid column -->
+
+                <!-- Grid column -->
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4" style="font-family: Times New Roman" ;>
+
+                    <!-- Links -->
+                    <h6 class="text-uppercase font-weight-bold">Contact</h6>
+                    <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                    <p>
+                        <i class="fas fa-home mr-3"></i> India
+                    </p>
+                    <p>
+                        <i class="fas fa-envelope mr-3"></i> Olympic@gmail.com
+                    </p>
+                    <p>
+                        <i class="fas fa-phone mr-3"></i> + 01 234 567 88
+                    </p>
+                    <p>
+                        <i class="fas fa-print mr-3"></i> + 01 234 567 89
+                    </p>
+
+                </div>
+                <!-- Grid column -->
+
+            </div>
+            <!-- Grid row -->
+
+        </div>
+        <!-- Footer Links -->
+        <div style="background-color: #333" ;>
+            <!-- <div class="container" > -->
+
+            <!-- Grid row-->
+            <div class="row py-4 d-flex align-items-center" style="font-family: Times New Roman" ;>
+
+
+                <!-- Copyright -->
+                <div class="footer-copyright text-center" style="color:white; font-family: Times New Roman" ;>© 2021
+                    Copyright:
+                    <a href="https://mdbootstrap.com/" style="font-family: Times New Roman" ;> India At Olympics.com</a>
+                </div>
+                <!-- Copyright -->
+
+                </footer>
+
+                <!-- Footer -->
+
+                <!-- Optional JavaScript; choose one of the two! -->
+
+                <!-- Option 1: Bootstrap Bundle with Popper -->
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+                    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+                    crossorigin="anonymous"></script>
+
+                <!-- Option 2: Separate Popper and Bootstrap JS -->
+                <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    -->
+                <script>
+                    var btn = $('#button');
+
+                    $(window).scroll(function () {
+                        if ($(window).scrollTop() > 300) {
+                            btn.addClass('show');
+                        } else {
+                            btn.removeClass('show');
+                        }
+                    });
+
+                    btn.on('click', function (e) {
+                        e.preventDefault();
+                        $('html, body').animate({ scrollTop: 0 }, '300');
+                    });
+
+
+                </script>
+</body>
+
+</html>

@@ -1,0 +1,848 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+  <title>Medals</title>
+  <!-- <script>
+    $(document).ready(function () {
+      $("#flip").click(function () {
+        $("#panel").slideToggle("slow");
+      });
+    });
+  </script> -->
+</head>
+<style>
+  #flip {
+    padding: 5px;
+    text-align: center;
+    color: white;
+    background-color: rgb(97, 96, 96);
+    border: solid 1px white;
+    border-radius: 8px;
+  }
+
+  #panel {
+    font-size: 4rem;
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4)), url("https://img.olympicchannel.com/images/image/private/t_16-9_3200/primary/rlu2pi0vbaqv028bj9zr");
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 400px;
+    text-align: center;
+    text-shadow: 2px 2px grey;
+  }
+
+  #panel {
+    padding: 50px;
+    display: none;
+    text-align: left;
+  }
+
+  .heading h1 {
+    font-size: 4rem;
+    color: rgb(60, 7, 110);
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    text-shadow: 2px 2px grey;
+    margin-left: 350px;
+    margin-top: 200px;
+
+  }
+
+  .head {
+    color: black;
+    font-weight: bold;
+
+  }
+
+  .container {
+    width: 80vh;
+    margin-left: 200px;
+
+  }
+
+  .img-thumbnail {
+    height: 200px;
+    width: 80%;
+  }
+
+  .img-fluid {
+    height: 400px;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: Verdana, sans-serif;
+  }
+
+  .mySlides {
+    display: none;
+  }
+
+  img {
+    vertical-align: middle;
+    height: 500px;
+  }
+
+  /* Slideshow container */
+  .slideshow-container {
+    max-width: 2000px;
+    position: relative;
+    margin: auto;
+  }
+
+  /* Caption text */
+  .text {
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Number text (1/3 etc) */
+  .numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+  }
+
+  /* The dots/bullets/indicators */
+  .dot {
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.9s ease;
+  }
+
+  .active {
+    background-color: #717171;
+  }
+
+  /* Fading animation */
+  .fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.8s;
+    animation-name: fade;
+    animation-duration: 1.8s;
+  }
+
+  @-webkit-keyframes fade {
+    from {
+      opacity: .4
+    }
+
+    to {
+      opacity: 1
+    }
+  }
+
+  @keyframes fade {
+    from {
+      opacity: .4
+    }
+
+    to {
+      opacity: 1
+    }
+  }
+
+  /* On smaller screens, decrease text size */
+  @media only screen and (max-width: 300px) {
+    .text {
+      font-size: 11px
+    }
+  }
+</style>
+
+<body>
+
+  <nav class="navbar navbar-light bg-light fixed-top">
+    <div class="container-fluid">
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+        aria-controls="offcanvasNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Sports At Olympics</h5>
+          <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.php">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="sports.html">Sports</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="medal.html">Medals</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="" href="JavaScript QUiz/start.html">Quiz</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="" href="free.html">Academies in India</a>
+            </li>
+
+
+            </li>
+          </ul>
+
+        </div>
+      </div>
+    </div>
+  </nav>
+  <br><br>
+
+  <div class="slideshow-container my-3">
+    <div class="mySlides fade text-center ">
+
+      <div class="numbertext">1 / 3</div>
+
+      <img src="https://img.olympicchannel.com/images/image/private/t_16-9_3200/primary/rlu2pi0vbaqv028bj9zr">
+
+    </div>
+
+    <div class="mySlides fade text-center">
+      <div class="numbertext">2 / 3</div>
+      <img src="https://www.aljazeera.com/wp-content/uploads/2021/08/000_9J49JH.jpg?resize=1200%2C630">
+
+    </div>
+
+    <div class="mySlides fade text-center">
+      <div class="numbertext">3 / 3</div>
+      <img src="https://s3.india.com/wp-content/uploads/2021/07/Mirabai-Twitter-1.jpg">
+
+    </div>
+
+  </div>
+  <br>
+
+  <div style="text-align:center">
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+  </div>
+
+  <script>
+    var slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+      var i;
+      var slides = document.getElementsByClassName("mySlides");
+      var dots = document.getElementsByClassName("dot");
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) { slideIndex = 1 }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex - 1].style.display = "block";
+      dots[slideIndex - 1].className += " active";
+      setTimeout(showSlides, 2000); // Change image every 2 seconds
+    }
+  </script>
+  <p>
+
+    India first participated at the Olympic Games in 1900, with a lone athlete Norman Pritchard winning two medals –
+    both
+    silver – in athletics and became the first Asian nation to win an Olympic medal.
+
+    The nation first sent a team to the Summer Olympic Games in 1920 and has participated in every Summer Games since
+    then. India has also competed at several Winter Olympic Games beginning in 1964.
+
+    Indian athletes have won 35 medals, all at the Summer Games. For a period of time, Indian Men's Field Hockey Team
+    was
+    dominant in Olympic competition, winning eleven medals in twelve Olympics between 1928 and 1980. The run included
+    eight gold medals of which six were won consecutively from 1928 to 1956</p>
+
+  <br><br>
+  <h1 class="head">Summer</h1><br>
+  <p>This list provides a comparative compendium of all the participants/competitors of India in the Summer Olympic
+    games.</p>
+  <div class="container">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Games</th>
+          <th scope="col">Sports</th>
+          <th scope="col">men</th>
+          <th scope="col">Women</th>
+          <th scope="col">Total</th>
+          <th scope="col">Change</th>
+          <th scope="col">Gold</th>
+          <th scope="col">Silver</th>
+          <th scope="col">Bronze</th>
+          <th scope="col">Total</th>
+          <th scope="col">Change</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>1900</td>
+          <td>1</td>
+          <td>1</td>
+          <td>0</td>
+          <td>1</td>
+          <td>N/A</td>
+          <td>0</td>
+          <td>2</td>
+          <td>0</td>
+          <td>2</td>
+          <td>N/A</td>
+
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>1920</td>
+          <td>2</td>
+          <td>5</td>
+          <td>0</td>
+          <td>5</td>
+          <td>+4</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>-2</td>
+        </tr>
+        <tr>
+          <th scope="row">3</th>
+          <td>1924</td>
+          <td>2</td>
+          <td>12</td>
+          <td>2</td>
+          <td>14</td>
+          <td>+9</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>+1</td>
+        </tr>
+        <tr>
+          <th scope="row">4</th>
+          <td>1928</td>
+          <td>2</td>
+          <td>22</td>
+          <td>0</td>
+          <td>22</td>
+          <td>+8</td>
+          <td>1</td>
+          <td>0</td>
+          <td>0</td>
+          <td>1</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <th scope="row">5</th>
+          <td>1932</td>
+          <td>3</td>
+          <td>20</td>
+          <td>0</td>
+          <td>20</td>
+          <td>-2</td>
+          <td>1</td>
+          <td>0</td>
+          <td>0</td>
+          <td>1</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <th scope="row">6</th>
+          <td>1936</td>
+          <td>4</td>
+          <td>27</td>
+          <td>0</td>
+          <td>27</td>
+          <td>+7</td>
+          <td>1</td>
+          <td>0</td>
+          <td>0</td>
+          <td>1</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <th scope="row">7</th>
+          <td>1948</td>
+          <td>10</td>
+          <td>79</td>
+          <td>0</td>
+          <td>79</td>
+          <td>+52</td>
+          <td>1</td>
+          <td>0</td>
+          <td>0</td>
+          <td>1</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <th scope="row">8</th>
+          <td>1952</td>
+          <td>11</td>
+          <td>60</td>
+          <td>4</td>
+          <td>64</td>
+          <td>-15</td>
+          <td>1</td>
+          <td>0</td>
+          <td>1</td>
+          <td>2</td>
+          <td>+1</td>
+        </tr>
+        <tr>
+          <th scope="row">9</th>
+          <td>1956</td>
+          <td>8</td>
+          <td>58</td>
+          <td>1</td>
+          <td>59</td>
+          <td>-5</td>
+          <td>1</td>
+          <td>0</td>
+          <td>0</td>
+          <td>1</td>
+          <td>-1</td>
+        </tr>
+        <tr>
+          <th scope="row">10</th>
+          <td>1960</td>
+          <td>6</td>
+          <td>45</td>
+          <td>0</td>
+          <td>45</td>
+          <td>-14</td>
+          <td>0</td>
+          <td>1</td>
+          <td>0</td>
+          <td>1</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <th scope="row">11</th>
+          <td>1964</td>
+          <td>8</td>
+          <td>52</td>
+          <td>1</td>
+          <td>53</td>
+          <td>+8</td>
+          <td>1</td>
+          <td>0</td>
+          <td>0</td>
+          <td>1</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <th scope="row">12</th>
+          <td>1968</td>
+          <td>5</td>
+          <td>25</td>
+          <td>0</td>
+          <td>25</td>
+          <td>-28</td>
+          <td>0</td>
+          <td>0</td>
+          <td>1</td>
+          <td>1</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <th scope="row">13</th>
+          <td>1972</td>
+          <td>7</td>
+          <td>40</td>
+          <td>1</td>
+          <td>41</td>
+          <td>+16</td>
+          <td>0</td>
+          <td>0</td>
+          <td>1</td>
+          <td>1</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <th scope="row">14</th>
+          <td>1976</td>
+          <td>2</td>
+          <td>20</td>
+          <td>0</td>
+          <td>20</td>
+          <td>-21</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>-1</td>
+        </tr>
+        <tr>
+          <th scope="row">15</th>
+          <td>1980</td>
+          <td>4</td>
+          <td>58</td>
+          <td>18</td>
+          <td>76</td>
+          <td>+56</td>
+          <td>1</td>
+          <td>0</td>
+          <td>0</td>
+          <td>1</td>
+          <td>+1</td>
+        </tr>
+        <tr>
+          <th scope="row">16</th>
+          <td>1984</td>
+          <td>5</td>
+          <td>38</td>
+          <td>10</td>
+          <td>48</td>
+          <td>-28</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>-1</td>
+        </tr>
+        <tr>
+          <th scope="row">17</th>
+          <td>1988</td>
+          <td>10</td>
+          <td>39</td>
+          <td>7</td>
+          <td>46</td>
+          <td>-2</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <th scope="row">18</th>
+          <td>1992</td>
+          <td>12</td>
+          <td>44</td>
+          <td>9</td>
+          <td>53</td>
+          <td>+7</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <th scope="row">19</th>
+          <td>1996</td>
+          <td>13</td>
+          <td>45</td>
+          <td>4</td>
+          <td>49</td>
+          <td>-4</td>
+          <td>0</td>
+          <td>0</td>
+          <td>1</td>
+          <td>1</td>
+          <td>+1</td>
+        </tr>
+        <tr>
+          <th scope="row">20</th>
+          <td>2000</td>
+          <td>13</td>
+          <td>46</td>
+          <td>19</td>
+          <td>65</td>
+          <td>+16</td>
+          <td>0</td>
+          <td>0</td>
+          <td>1</td>
+          <td>1</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <th scope="row">21</th>
+          <td>2004</td>
+          <td>14</td>
+          <td>48</td>
+          <td>25</td>
+          <td>73</td>
+          <td>+8</td>
+          <td>0</td>
+          <td>1</td>
+          <td>0</td>
+          <td>1</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <th scope="row">22</th>
+          <td>2008</td>
+          <td>12</td>
+          <td>31</td>
+          <td>25</td>
+          <td>56</td>
+          <td>-17</td>
+          <td>1</td>
+          <td>0</td>
+          <td>2</td>
+          <td>3</td>
+          <td>+2</td>
+        </tr>
+        <tr>
+          <th scope="row">23</th>
+          <td>2012</td>
+          <td>13</td>
+          <td>60</td>
+          <td>23</td>
+          <td>83</td>
+          <td>+27</td>
+          <td>0</td>
+          <td>2</td>
+          <td>4</td>
+          <td>6</td>
+          <td>+3</td>
+        </tr>
+        <tr>
+          <th scope="row">24</th>
+          <td>2016</td>
+          <td>15</td>
+          <td>63</td>
+          <td>54</td>
+          <td>117</td>
+          <td>+34</td>
+          <td>0</td>
+          <td>1</td>
+          <td>1</td>
+          <td>2</td>
+          <td>-4</td>
+        </tr>
+        <tr>
+          <th scope="row">25</th>
+          <td>2020</td>
+          <td>18</td>
+          <td>70</td>
+          <td>54</td>
+          <td>124</td>
+          <td>+7</td>
+          <td>1</td>
+          <td>2</td>
+          <td>4</td>
+          <td>7</td>
+          <td>+5</td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div><br>
+  <h1 class="head">Winter</h1><br>
+  <p>This list provides a comparative compendium of all the participants/competitors of India in the Winter Olympic
+    games.</p>
+  <div class="container">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Games</th>
+          <th scope="col">Sports</th>
+          <th scope="col">men</th>
+          <th scope="col">Women</th>
+          <th scope="col">Total</th>
+          <th scope="col">Change</th>
+          <th scope="col">Gold</th>
+          <th scope="col">Silver</th>
+          <th scope="col">Bronze</th>
+          <th scope="col">Total</th>
+          <th scope="col">Change</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>1964</td>
+          <td>1</td>
+          <td>1</td>
+          <td>0</td>
+          <td>1</td>
+          <td>N/A</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>N/A</td>
+        </tr>
+        <tr>
+
+          <th scope="row">2</th>
+          <td>1968</td>
+          <td>1</td>
+          <td>1</td>
+          <td>0</td>
+          <td>1</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <th scope="row">3</th>
+          <td>1988</td>
+          <td>1</td>
+          <td>2</td>
+          <td>1</td>
+          <td>3</td>
+          <td>+2</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <th scope="row">4</th>
+          <td>1992</td>
+          <td>1</td>
+          <td>2</td>
+          <td>0</td>
+          <td>2</td>
+          <td>-1</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <th scope="row">5</th>
+          <td>1998</td>
+          <td>1</td>
+          <td>1</td>
+          <td>0</td>
+          <td>1</td>
+          <td>-1</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <th scope="row">6</th>
+          <td>2002</td>
+          <td>1</td>
+          <td>1</td>
+          <td>0</td>
+          <td>1</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <th scope="row">7</th>
+          <td>2006</td>
+          <td>3</td>
+          <td>3</td>
+          <td>1</td>
+          <td>4</td>
+          <td>+3</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <th scope="row">8</th>
+          <td>2010</td>
+          <td>3</td>
+          <td>3</td>
+          <td>0</td>
+          <td>3</td>
+          <td>-1</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <th scope="row">9</th>
+          <td>2014</td>
+          <td>3</td>
+          <td>3</td>
+          <td>0</td>
+          <td>3</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <th scope="row">10</th>
+          <td>2018</td>
+          <td>2</td>
+          <td>2</td>
+          <td>0</td>
+          <td>2</td>
+          <td>-1</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+ 
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src=" https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+      </script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    -->
+</body>
+
+</html>
